@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FreshUp Kraków | Czyszczenie z odbiorem</title>
+<meta name="description" content="FreshUp Kraków — czyszczenie butów, torebek, walizek i plecaków z odbiorem i zwrotem pod adres.">
 <style>
 body{margin:0;font-family:Arial,sans-serif;color:#10231C;background:#fff}
 header{padding:18px 24px;border-bottom:1px solid #d7e8df;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;z-index:10}
 .logo{font-size:28px;font-weight:900;color:#19A974}
 .btn{background:#19A974;color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
 .btn.alt{background:white;color:#19A974;border:1px solid #19A974}
-.container{max-width:1100px;margin:auto;padding:60px 20px}
+.container{max-width:1100px;margin:auto;padding:58px 20px}
 .hero{background:#F4FBF7}
-h1{font-size:clamp(38px,6vw,64px);line-height:1.05;margin:0 0 18px}
-h2{font-size:36px;margin:0 0 12px}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.05;margin:0 0 18px}
+h2{font-size:34px;margin:0 0 12px}
 p{color:#66756F;font-size:18px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -30,6 +31,9 @@ textarea{min-height:80px}
 .warning{background:#FFF4E5;color:#8A5A00;padding:14px;border-radius:12px;margin-top:12px;font-weight:800}
 .light{background:#F4FBF7}
 footer{background:#10231C;color:white;text-align:center;padding:32px}
+footer a{color:white;margin:0 10px;text-decoration:underline}
+.checkbox{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;color:#10231C}
+.checkbox input{width:auto;margin-top:3px}
 @media(max-width:800px){.grid,.grid2{grid-template-columns:1fr}header{flex-direction:column;gap:12px;align-items:flex-start}}
 </style>
 </head>
@@ -43,11 +47,11 @@ footer{background:#10231C;color:white;text-align:center;padding:32px}
 
 <section class="hero">
   <div class="container">
-    <h1>Czyszczenie butów, torebek i walizek z odbiorem spod drzwi.</h1>
-    <p>Wybierz rzeczy, zapłać online, przygotuj zamówienie. Odbierzemy, wyczyścimy i odwieziemy pod wskazany adres.</p>
+    <h1>Brudne buty, torebka albo walizka? Nie jedź do punktu.</h1>
+    <p>FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego.</p>
     <a href="#order" class="btn">Zamów odbiór</a>
     <a href="#pricing" class="btn alt">Zobacz cennik</a>
-    <p><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum:</strong> 120 zł.</p>
+    <p><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł.</p>
   </div>
 </section>
 
@@ -55,21 +59,36 @@ footer{background:#10231C;color:white;text-align:center;padding:32px}
   <div class="container">
     <h2>Jak to działa?</h2>
     <div class="grid">
-      <div class="card"><h3>1. Wybierasz rzeczy</h3><p>Każdą rzecz dodajesz osobno.</p></div>
-      <div class="card"><h3>2. Płacisz online</h3><p>Po płatności zamówienie jest aktywne.</p></div>
-      <div class="card"><h3>3. Odbiór i zwrot</h3><p>Odbieramy i zwracamy do 5 dni roboczych.</p></div>
+      <div class="card"><h3>1. Wybierasz rzeczy</h3><p>Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel.</p></div>
+      <div class="card"><h3>2. Płacisz online</h3><p>Po płatności zamówienie jest aktywne i trafia do realizacji.</p></div>
+      <div class="card"><h3>3. Odbiór i zwrot</h3><p>Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych.</p></div>
     </div>
   </div>
 </section>
 
 <section id="pricing" class="light">
   <div class="container">
-    <h2>Cennik testowy</h2>
-    <p>Minimalna wartość zamówienia z odbiorem: 120 zł.</p>
+    <h2>Cennik</h2>
+    <p>Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu.</p>
     <div class="grid">
-      <div class="card"><h3>Buty</h3><div class="price">79 zł</div><p>Basic</p><div class="price">109 zł</div><p>Deep Clean</p><p>Impregnacja +29 zł</p></div>
-      <div class="card"><h3>Torebki / plecaki</h3><div class="price">99 zł</div><p>Basic</p><div class="price">149 zł</div><p>Deep Clean</p><p>Konserwacja +39 zł</p></div>
-      <div class="card"><h3>Walizki / torby</h3><div class="price">119 zł</div><p>Basic</p><div class="price">169 zł</div><p>Deep Clean</p></div>
+      <div class="card">
+        <h3>Buty</h3>
+        <div class="price">49 zł</div><p>Basic Clean</p>
+        <div class="price">79 zł</div><p>Deep Clean</p>
+        <p>Impregnacja: +19 zł</p>
+      </div>
+      <div class="card">
+        <h3>Torebki / plecaki</h3>
+        <div class="price">69 zł</div><p>Basic Clean</p>
+        <div class="price">99 zł</div><p>Deep Clean</p>
+        <p>Konserwacja: +29 zł</p>
+      </div>
+      <div class="card">
+        <h3>Walizki / torby</h3>
+        <div class="price">89 zł</div><p>Basic Clean</p>
+        <div class="price">129 zł</div><p>Deep Clean</p>
+        <p>Większe zabrudzenia potwierdzamy przed realizacją.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -82,7 +101,7 @@ footer{background:#10231C;color:white;text-align:center;padding:32px}
     </div>
     <div class="card">
       <h2>Deep Clean</h2>
-      <p>Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie.</p>
+      <p>Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone.</p>
     </div>
   </div>
 </section>
@@ -127,8 +146,8 @@ footer{background:#10231C;color:white;text-align:center;padding:32px}
           <label>Dodatek</label>
           <select id="addonType">
             <option value="none">Brak</option>
-            <option value="protection">Impregnacja / ochrona +29 zł</option>
-            <option value="conditioning">Konserwacja +39 zł</option>
+            <option value="protection">Impregnacja / ochrona +19 zł</option>
+            <option value="conditioning">Konserwacja +29 zł</option>
           </select>
         </div>
         <div>
@@ -176,29 +195,37 @@ footer{background:#10231C;color:white;text-align:center;padding:32px}
         <label>Uwagi do zamówienia</label>
         <textarea id="orderNotes" placeholder="np. proszę zadzwonić 10 minut wcześniej"></textarea>
 
-        <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()">Przejdź do płatności</button>
+        <label class="checkbox">
+          <input type="checkbox" id="termsCheck">
+          <span>Akceptuję <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a> oraz <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Politykę prywatności</a>.</span>
+        </label>
+
+        <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()">Przejdź do płatności online</button>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <strong>FreshUp</strong><br>
-  Czyszczenie z odbiorem i zwrotem w Krakowie.
+  <strong>FreshUp Kraków</strong><br>
+  Czyszczenie z odbiorem i zwrotem w Krakowie.<br><br>
+  Kontakt: freshup.krakow@gmail.com<br><br>
+  <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a>
+  <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Polityka prywatności</a>
 </footer>
 
 <script>
-const STRIPE_PAYMENT_LINK = "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE";
+const PAYMENT_LINK = "PASTE_HOTPAY_LINK_HERE";
 
 let cart = [];
 
 const prices = {
-  shoes:{basic:79,deep:109},
-  handbag:{basic:99,deep:149},
-  backpack:{basic:99,deep:149},
-  suitcase:{basic:119,deep:169},
-  travelbag:{basic:119,deep:169},
-  wallet:{basic:59,deep:89}
+  shoes:{basic:49,deep:79},
+  handbag:{basic:69,deep:99},
+  backpack:{basic:69,deep:99},
+  suitcase:{basic:89,deep:129},
+  travelbag:{basic:89,deep:129},
+  wallet:{basic:39,deep:59}
 };
 
 const labels = {
@@ -222,8 +249,8 @@ function addItem(){
   const notes=document.getElementById("itemNotes").value;
 
   let price=prices[itemType][serviceType];
-  if(addonType==="protection") price+=29;
-  if(addonType==="conditioning") price+=39;
+  if(addonType==="protection") price+=19;
+  if(addonType==="conditioning") price+=29;
 
   cart.push({itemType,serviceType,addonType,notes,price});
   document.getElementById("itemNotes").value="";
@@ -285,28 +312,32 @@ function goToPayment(){
     }
   }
 
-  const orderText =
-`FreshUp zamówienie
-Suma: ${total} zł
+  if(!document.getElementById("termsCheck").checked){
+    alert("Zaakceptuj regulamin i politykę prywatności.");
+    return;
+  }
 
-Klient: ${document.getElementById("name").value}
-Telefon: ${document.getElementById("phone").value}
-Email: ${document.getElementById("email").value}
+  localStorage.setItem("freshup_last_order", JSON.stringify({
+    total,
+    customer:{
+      name:document.getElementById("name").value,
+      phone:document.getElementById("phone").value,
+      email:document.getElementById("email").value,
+      pickupDay:document.getElementById("pickupDay").value,
+      pickupAddress:document.getElementById("pickupAddress").value,
+      returnAddress:document.getElementById("returnAddress").value,
+      pickupPlace:document.getElementById("pickupPlace").value,
+      orderNotes:document.getElementById("orderNotes").value
+    },
+    cart
+  }));
 
-Odbiór: ${document.getElementById("pickupDay").value}
-Adres odbioru: ${document.getElementById("pickupAddress").value}
-Adres zwrotu: ${document.getElementById("returnAddress").value}
-Miejsce odbioru: ${document.getElementById("pickupPlace").value}
-Uwagi: ${document.getElementById("orderNotes").value}
+  if(PAYMENT_LINK === "PASTE_HOTPAY_LINK_HERE"){
+    alert("Płatność online zostanie aktywowana po podpięciu HotPay.");
+    return;
+  }
 
-Koszyk:
-${cart.map((item,i)=>`${i+1}. ${labels[item.itemType]} — ${labels[item.serviceType]}, ${labels[item.addonType]}, ${item.price} zł, ${item.notes || "brak uwag"}`).join("\n")}`;
-
-  localStorage.setItem("freshup_last_order", orderText);
-
-  alert("Za chwilę przejdziesz do płatności. Dane zamówienia zostały zapisane w przeglądarce.");
-
-  window.location.href = STRIPE_PAYMENT_LINK;
+  window.location.href = PAYMENT_LINK;
 }
 
 renderCart();
