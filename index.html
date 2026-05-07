@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshUp Kraków | Czyszczenie z odbiorem</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;color:#10231C;background:#fff}
+header{padding:18px 24px;border-bottom:1px solid #d7e8df;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;z-index:10}
+.logo{font-size:28px;font-weight:900;color:#19A974}
+.btn{background:#19A974;color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:white;color:#19A974;border:1px solid #19A974}
+.container{max-width:1100px;margin:auto;padding:60px 20px}
+.hero{background:#F4FBF7}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05;margin:0 0 18px}
+h2{font-size:36px;margin:0 0 12px}
+p{color:#66756F;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{border:1px solid #d7e8df;border-radius:18px;padding:24px;background:white}
+.price{font-size:30px;color:#19A974;font-weight:900}
+label{font-weight:800;display:block;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #d7e8df;border-radius:10px;font-size:15px;box-sizing:border-box}
+textarea{min-height:80px}
+.order{border:2px solid #19A974;border-radius:22px;padding:24px}
+.cart-item{background:#F4FBF7;border:1px solid #d7e8df;border-radius:14px;padding:14px;margin:12px 0;display:flex;justify-content:space-between;gap:10px}
+.remove{border:0;background:transparent;color:#C0392B;font-weight:800;cursor:pointer}
+.summary{background:#10231C;color:white;padding:18px;border-radius:16px;margin-top:18px}
+.summary strong{font-size:28px}
+.warning{background:#FFF4E5;color:#8A5A00;padding:14px;border-radius:12px;margin-top:12px;font-weight:800}
+.light{background:#F4FBF7}
+footer{background:#10231C;color:white;text-align:center;padding:32px}
+@media(max-width:800px){.grid,.grid2{grid-template-columns:1fr}header{flex-direction:column;gap:12px;align-items:flex-start}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">FreshUp</div>
+  <a href="#order" class="btn">Zamów odbiór</a>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Czyszczenie butów, torebek i walizek z odbiorem spod drzwi.</h1>
+    <p>Wybierz rzeczy, zapłać online, przygotuj zamówienie. Odbierzemy, wyczyścimy i odwieziemy pod wskazany adres.</p>
+    <a href="#order" class="btn">Zamów odbiór</a>
+    <a href="#pricing" class="btn alt">Zobacz cennik</a>
+    <p><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum:</strong> 120 zł.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Jak to działa?</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Wybierasz rzeczy</h3><p>Każdą rzecz dodajesz osobno.</p></div>
+      <div class="card"><h3>2. Płacisz online</h3><p>Po płatności zamówienie jest aktywne.</p></div>
+      <div class="card"><h3>3. Odbiór i zwrot</h3><p>Odbieramy i zwracamy do 5 dni roboczych.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="light">
+  <div class="container">
+    <h2>Cennik testowy</h2>
+    <p>Minimalna wartość zamówienia z odbiorem: 120 zł.</p>
+    <div class="grid">
+      <div class="card"><h3>Buty</h3><div class="price">79 zł</div><p>Basic</p><div class="price">109 zł</div><p>Deep Clean</p><p>Impregnacja +29 zł</p></div>
+      <div class="card"><h3>Torebki / plecaki</h3><div class="price">99 zł</div><p>Basic</p><div class="price">149 zł</div><p>Deep Clean</p><p>Konserwacja +39 zł</p></div>
+      <div class="card"><h3>Walizki / torby</h3><div class="price">119 zł</div><p>Basic</p><div class="price">169 zł</div><p>Deep Clean</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container grid2">
+    <div class="card">
+      <h2>Basic Clean</h2>
+      <p>Normalne ślady użytkowania: kurz, standardowe zabrudzenia, lekkie przebarwienia, codzienne odświeżenie.</p>
+    </div>
+    <div class="card">
+      <h2>Deep Clean</h2>
+      <p>Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie.</p>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <h2>Co przyjmujemy?</h2>
+    <div class="grid2">
+      <div class="card"><h3>Tak</h3><p>Buty, torebki, plecaki, walizki, torby podróżne, portfele.</p></div>
+      <div class="card"><h3>Na start nie</h3><p>Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki.</p></div>
+    </div>
+    <div class="warning">Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia.</div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="container">
+    <h2>Zamów odbiór</h2>
+    <p>Dodaj każdą rzecz osobno. Minimum zamówienia: 120 zł.</p>
+
+    <div class="order">
+      <div class="grid2">
+        <div>
+          <label>Typ rzeczy</label>
+          <select id="itemType">
+            <option value="shoes">Buty</option>
+            <option value="handbag">Torebka</option>
+            <option value="backpack">Plecak</option>
+            <option value="suitcase">Walizka</option>
+            <option value="travelbag">Torba podróżna</option>
+            <option value="wallet">Portfel</option>
+          </select>
+        </div>
+        <div>
+          <label>Usługa</label>
+          <select id="serviceType">
+            <option value="basic">Basic Clean</option>
+            <option value="deep">Deep Clean</option>
+          </select>
+        </div>
+        <div>
+          <label>Dodatek</label>
+          <select id="addonType">
+            <option value="none">Brak</option>
+            <option value="protection">Impregnacja / ochrona +29 zł</option>
+            <option value="conditioning">Konserwacja +39 zł</option>
+          </select>
+        </div>
+        <div>
+          <label>Uwagi do rzeczy</label>
+          <input id="itemNotes" placeholder="np. plama, brudne wnętrze">
+        </div>
+      </div>
+
+      <button class="btn" style="margin-top:18px" onclick="addItem()">Dodaj do koszyka</button>
+
+      <div id="cart"></div>
+
+      <div class="summary">
+        Suma zamówienia:<br>
+        <strong><span id="total">0</span> zł</strong>
+        <div id="minWarning" class="warning">Minimum zamówienia z odbiorem to 120 zł.</div>
+      </div>
+
+      <form id="orderForm">
+        <div class="grid2">
+          <div><label>Imię i nazwisko</label><input id="name" required></div>
+          <div><label>Telefon</label><input id="phone" required></div>
+          <div><label>Email</label><input id="email" type="email" required></div>
+          <div>
+            <label>Dzień odbioru</label>
+            <select id="pickupDay">
+              <option>Poniedziałek</option>
+              <option>Środa</option>
+              <option>Piątek</option>
+            </select>
+          </div>
+          <div><label>Adres odbioru</label><input id="pickupAddress" required></div>
+          <div><label>Adres zwrotu</label><input id="returnAddress" required></div>
+        </div>
+
+        <label>Miejsce odbioru</label>
+        <select id="pickupPlace">
+          <option>Dom</option>
+          <option>Praca</option>
+          <option>Recepcja</option>
+          <option>Sąsiad</option>
+          <option>Ustalone miejsce</option>
+        </select>
+
+        <label>Uwagi do zamówienia</label>
+        <textarea id="orderNotes" placeholder="np. proszę zadzwonić 10 minut wcześniej"></textarea>
+
+        <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()">Przejdź do płatności</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>FreshUp</strong><br>
+  Czyszczenie z odbiorem i zwrotem w Krakowie.
+</footer>
+
+<script>
+const STRIPE_PAYMENT_LINK = "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE";
+
+let cart = [];
+
+const prices = {
+  shoes:{basic:79,deep:109},
+  handbag:{basic:99,deep:149},
+  backpack:{basic:99,deep:149},
+  suitcase:{basic:119,deep:169},
+  travelbag:{basic:119,deep:169},
+  wallet:{basic:59,deep:89}
+};
+
+const labels = {
+  shoes:"Buty",
+  handbag:"Torebka",
+  backpack:"Plecak",
+  suitcase:"Walizka",
+  travelbag:"Torba podróżna",
+  wallet:"Portfel",
+  basic:"Basic Clean",
+  deep:"Deep Clean",
+  none:"Brak",
+  protection:"Impregnacja / ochrona",
+  conditioning:"Konserwacja"
+};
+
+function addItem(){
+  const itemType=document.getElementById("itemType").value;
+  const serviceType=document.getElementById("serviceType").value;
+  const addonType=document.getElementById("addonType").value;
+  const notes=document.getElementById("itemNotes").value;
+
+  let price=prices[itemType][serviceType];
+  if(addonType==="protection") price+=29;
+  if(addonType==="conditioning") price+=39;
+
+  cart.push({itemType,serviceType,addonType,notes,price});
+  document.getElementById("itemNotes").value="";
+  renderCart();
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  renderCart();
+}
+
+function getTotal(){
+  return cart.reduce((sum,item)=>sum+item.price,0);
+}
+
+function renderCart(){
+  const cartDiv=document.getElementById("cart");
+  const total=getTotal();
+  cartDiv.innerHTML="";
+
+  cart.forEach((item,index)=>{
+    cartDiv.innerHTML+=`
+      <div class="cart-item">
+        <div>
+          <strong>${labels[item.itemType]} — ${labels[item.serviceType]}</strong><br>
+          Dodatek: ${labels[item.addonType]}<br>
+          ${item.notes ? "Uwagi: " + item.notes + "<br>" : ""}
+          <strong>${item.price} zł</strong>
+        </div>
+        <button class="remove" onclick="removeItem(${index})">Usuń</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").textContent=total;
+  document.getElementById("minWarning").style.display=total>=120?"none":"block";
+}
+
+function goToPayment(){
+  const total=getTotal();
+
+  if(cart.length===0){
+    alert("Dodaj przynajmniej jedną rzecz do koszyka.");
+    return;
+  }
+
+  if(total<120){
+    alert("Minimum zamówienia z odbiorem to 120 zł.");
+    return;
+  }
+
+  const required=["name","phone","email","pickupAddress","returnAddress"];
+  for(const id of required){
+    const field=document.getElementById(id);
+    if(!field.value.trim()){
+      alert("Uzupełnij dane zamówienia.");
+      field.focus();
+      return;
+    }
+  }
+
+  const orderText =
+`FreshUp zamówienie
+Suma: ${total} zł
+
+Klient: ${document.getElementById("name").value}
+Telefon: ${document.getElementById("phone").value}
+Email: ${document.getElementById("email").value}
+
+Odbiór: ${document.getElementById("pickupDay").value}
+Adres odbioru: ${document.getElementById("pickupAddress").value}
+Adres zwrotu: ${document.getElementById("returnAddress").value}
+Miejsce odbioru: ${document.getElementById("pickupPlace").value}
+Uwagi: ${document.getElementById("orderNotes").value}
+
+Koszyk:
+${cart.map((item,i)=>`${i+1}. ${labels[item.itemType]} — ${labels[item.serviceType]}, ${labels[item.addonType]}, ${item.price} zł, ${item.notes || "brak uwag"}`).join("\n")}`;
+
+  localStorage.setItem("freshup_last_order", orderText);
+
+  alert("Za chwilę przejdziesz do płatności. Dane zamówienia zostały zapisane w przeglądarce.");
+
+  window.location.href = STRIPE_PAYMENT_LINK;
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
