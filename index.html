@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FreshUp Kraków | Czyszczenie z odbiorem</title>
-<meta name="description" content="FreshUp Kraków — czyszczenie butów, torebek, walizek i plecaków z odbiorem i zwrotem pod adres.">
+<title>FreshUp Kraków | Cleaning with pickup and return</title>
+<meta name="description" content="FreshUp Kraków — czyszczenie butów, torebek, walizek i plecaków z odbiorem i zwrotem pod adres. Shoe, bag and suitcase cleaning with pickup and return in Kraków.">
 <style>
 body{margin:0;font-family:Arial,sans-serif;color:#10231C;background:#fff}
 header{padding:18px 24px;border-bottom:1px solid #d7e8df;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;z-index:10}
 .logo{font-size:28px;font-weight:900;color:#19A974}
+.nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lang{background:white;color:#19A974;border:1px solid #19A974;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
 .btn{background:#19A974;color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
 .btn.alt{background:white;color:#19A974;border:1px solid #19A974}
 .container{max-width:1100px;margin:auto;padding:58px 20px}
@@ -42,52 +44,56 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 
 <header>
   <div class="logo">FreshUp</div>
-  <a href="#order" class="btn">Zamów odbiór</a>
+  <div class="nav">
+    <button class="lang" onclick="setLang('pl')">PL</button>
+    <button class="lang" onclick="setLang('en')">EN</button>
+    <a href="#order" class="btn" data-pl="Zamów odbiór" data-en="Book pickup">Zamów odbiór</a>
+  </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h1>Brudne buty, torebka albo walizka? Nie jedź do punktu.</h1>
-    <p>FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego.</p>
-    <a href="#order" class="btn">Zamów odbiór</a>
-    <a href="#pricing" class="btn alt">Zobacz cennik</a>
-    <p><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł.</p>
+    <h1 data-pl="Brudne buty, torebka albo walizka? Nie jedź do punktu." data-en="Dirty shoes, handbag or suitcase? Don’t waste time going to a cleaning point.">Brudne buty, torebka albo walizka? Nie jedź do punktu.</h1>
+    <p data-pl="FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego." data-en="FreshUp picks up your items from your chosen address, cleans them and brings them back. Save time and spend it on something more important.">FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego.</p>
+    <a href="#order" class="btn" data-pl="Zamów odbiór" data-en="Book pickup">Zamów odbiór</a>
+    <a href="#pricing" class="btn alt" data-pl="Zobacz cennik" data-en="See pricing">Zobacz cennik</a>
+    <p data-pl="Odbiory: poniedziałek, środa, piątek. Minimum zamówienia: 120 zł." data-en="Pickups: Monday, Wednesday, Friday. Minimum order: 120 PLN."><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>Jak to działa?</h2>
+    <h2 data-pl="Jak to działa?" data-en="How it works">Jak to działa?</h2>
     <div class="grid">
-      <div class="card"><h3>1. Wybierasz rzeczy</h3><p>Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel.</p></div>
-      <div class="card"><h3>2. Płacisz online</h3><p>Po płatności zamówienie jest aktywne i trafia do realizacji.</p></div>
-      <div class="card"><h3>3. Odbiór i zwrot</h3><p>Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych.</p></div>
+      <div class="card"><h3 data-pl="1. Wybierasz rzeczy" data-en="1. Choose your items">1. Wybierasz rzeczy</h3><p data-pl="Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel." data-en="Add each item separately: shoes, handbag, backpack, suitcase or wallet.">Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel.</p></div>
+      <div class="card"><h3 data-pl="2. Płacisz online" data-en="2. Pay online">2. Płacisz online</h3><p data-pl="Po płatności zamówienie jest aktywne i trafia do realizacji." data-en="After payment, your order is active and ready for pickup.">Po płatności zamówienie jest aktywne i trafia do realizacji.</p></div>
+      <div class="card"><h3 data-pl="3. Odbiór i zwrot" data-en="3. Pickup and return">3. Odbiór i zwrot</h3><p data-pl="Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych." data-en="We collect your items and return them within 5 business days.">Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych.</p></div>
     </div>
   </div>
 </section>
 
 <section id="pricing" class="light">
   <div class="container">
-    <h2>Cennik</h2>
-    <p>Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu.</p>
+    <h2 data-pl="Cennik" data-en="Pricing">Cennik</h2>
+    <p data-pl="Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu." data-en="Minimum order with pickup: 120 PLN. You can combine several items in one order.">Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu.</p>
     <div class="grid">
       <div class="card">
-        <h3>Buty</h3>
+        <h3 data-pl="Buty" data-en="Shoes">Buty</h3>
         <div class="price">49 zł</div><p>Basic Clean</p>
         <div class="price">79 zł</div><p>Deep Clean</p>
-        <p>Impregnacja: +19 zł</p>
+        <p data-pl="Impregnacja: +19 zł" data-en="Protection: +19 PLN">Impregnacja: +19 zł</p>
       </div>
       <div class="card">
-        <h3>Torebki / plecaki</h3>
+        <h3 data-pl="Torebki / plecaki" data-en="Handbags / backpacks">Torebki / plecaki</h3>
         <div class="price">69 zł</div><p>Basic Clean</p>
         <div class="price">99 zł</div><p>Deep Clean</p>
-        <p>Konserwacja: +29 zł</p>
+        <p data-pl="Konserwacja: +29 zł" data-en="Conditioning: +29 PLN">Konserwacja: +29 zł</p>
       </div>
       <div class="card">
-        <h3>Walizki / torby</h3>
+        <h3 data-pl="Walizki / torby" data-en="Suitcases / travel bags">Walizki / torby</h3>
         <div class="price">89 zł</div><p>Basic Clean</p>
         <div class="price">129 zł</div><p>Deep Clean</p>
-        <p>Większe zabrudzenia potwierdzamy przed realizacją.</p>
+        <p data-pl="Większe zabrudzenia potwierdzamy przed realizacją." data-en="Heavier dirt is confirmed before service.">Większe zabrudzenia potwierdzamy przed realizacją.</p>
       </div>
     </div>
   </div>
@@ -97,110 +103,110 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
   <div class="container grid2">
     <div class="card">
       <h2>Basic Clean</h2>
-      <p>Normalne ślady użytkowania: kurz, standardowe zabrudzenia, lekkie przebarwienia, codzienne odświeżenie.</p>
+      <p data-pl="Normalne ślady użytkowania: kurz, standardowe zabrudzenia, lekkie przebarwienia, codzienne odświeżenie." data-en="Normal signs of use: dust, standard dirt, light discoloration and everyday refresh.">Normalne ślady użytkowania: kurz, standardowe zabrudzenia, lekkie przebarwienia, codzienne odświeżenie.</p>
     </div>
     <div class="card">
       <h2>Deep Clean</h2>
-      <p>Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone.</p>
+      <p data-pl="Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone." data-en="Heavier dirt: mud, dirty interior, coffee/wine stains, intensive use or items not cleaned for a long time.">Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone.</p>
     </div>
   </div>
 </section>
 
 <section class="light">
   <div class="container">
-    <h2>Co przyjmujemy?</h2>
+    <h2 data-pl="Co przyjmujemy?" data-en="What do we accept?">Co przyjmujemy?</h2>
     <div class="grid2">
-      <div class="card"><h3>Tak</h3><p>Buty, torebki, plecaki, walizki, torby podróżne, portfele.</p></div>
-      <div class="card"><h3>Na start nie</h3><p>Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki.</p></div>
+      <div class="card"><h3 data-pl="Tak" data-en="Yes">Tak</h3><p data-pl="Buty, torebki, plecaki, walizki, torby podróżne, portfele." data-en="Shoes, handbags, backpacks, suitcases, travel bags and wallets.">Buty, torebki, plecaki, walizki, torby podróżne, portfele.</p></div>
+      <div class="card"><h3 data-pl="Na start nie" data-en="Not at launch">Na start nie</h3><p data-pl="Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki." data-en="Suede, nubuck, very expensive luxury items, renovations, shoe repairs or extreme rescue cases.">Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki.</p></div>
     </div>
-    <div class="warning">Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia.</div>
+    <div class="warning" data-pl="Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia." data-en="If the condition of the item clearly differs from the selected service, we will contact you before service to discuss an extra payment or cancellation.">Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia.</div>
   </div>
 </section>
 
 <section id="order">
   <div class="container">
-    <h2>Zamów odbiór</h2>
-    <p>Dodaj każdą rzecz osobno. Minimum zamówienia: 120 zł.</p>
+    <h2 data-pl="Zamów odbiór" data-en="Book pickup">Zamów odbiór</h2>
+    <p data-pl="Dodaj każdą rzecz osobno. Minimum zamówienia: 120 zł." data-en="Add each item separately. Minimum order: 120 PLN.">Dodaj każdą rzecz osobno. Minimum zamówienia: 120 zł.</p>
 
     <div class="order">
       <div class="grid2">
         <div>
-          <label>Typ rzeczy</label>
+          <label data-pl="Typ rzeczy" data-en="Item type">Typ rzeczy</label>
           <select id="itemType">
-            <option value="shoes">Buty</option>
-            <option value="handbag">Torebka</option>
-            <option value="backpack">Plecak</option>
-            <option value="suitcase">Walizka</option>
-            <option value="travelbag">Torba podróżna</option>
-            <option value="wallet">Portfel</option>
+            <option value="shoes" data-pl="Buty" data-en="Shoes">Buty</option>
+            <option value="handbag" data-pl="Torebka" data-en="Handbag">Torebka</option>
+            <option value="backpack" data-pl="Plecak" data-en="Backpack">Plecak</option>
+            <option value="suitcase" data-pl="Walizka" data-en="Suitcase">Walizka</option>
+            <option value="travelbag" data-pl="Torba podróżna" data-en="Travel bag">Torba podróżna</option>
+            <option value="wallet" data-pl="Portfel" data-en="Wallet">Portfel</option>
           </select>
         </div>
         <div>
-          <label>Usługa</label>
+          <label data-pl="Usługa" data-en="Service">Usługa</label>
           <select id="serviceType">
             <option value="basic">Basic Clean</option>
             <option value="deep">Deep Clean</option>
           </select>
         </div>
         <div>
-          <label>Dodatek</label>
+          <label data-pl="Dodatek" data-en="Add-on">Dodatek</label>
           <select id="addonType">
-            <option value="none">Brak</option>
-            <option value="protection">Impregnacja / ochrona +19 zł</option>
-            <option value="conditioning">Konserwacja +29 zł</option>
+            <option value="none" data-pl="Brak" data-en="None">Brak</option>
+            <option value="protection" data-pl="Impregnacja / ochrona +19 zł" data-en="Protection +19 PLN">Impregnacja / ochrona +19 zł</option>
+            <option value="conditioning" data-pl="Konserwacja +29 zł" data-en="Conditioning +29 PLN">Konserwacja +29 zł</option>
           </select>
         </div>
         <div>
-          <label>Uwagi do rzeczy</label>
+          <label data-pl="Uwagi do rzeczy" data-en="Item notes">Uwagi do rzeczy</label>
           <input id="itemNotes" placeholder="np. plama, brudne wnętrze">
         </div>
       </div>
 
-      <button class="btn" style="margin-top:18px" onclick="addItem()">Dodaj do koszyka</button>
+      <button class="btn" style="margin-top:18px" onclick="addItem()" data-pl="Dodaj do koszyka" data-en="Add to cart">Dodaj do koszyka</button>
 
       <div id="cart"></div>
 
       <div class="summary">
-        Suma zamówienia:<br>
+        <span data-pl="Suma zamówienia:" data-en="Order total:">Suma zamówienia:</span><br>
         <strong><span id="total">0</span> zł</strong>
-        <div id="minWarning" class="warning">Minimum zamówienia z odbiorem to 120 zł.</div>
+        <div id="minWarning" class="warning" data-pl="Minimum zamówienia z odbiorem to 120 zł." data-en="Minimum order with pickup is 120 PLN.">Minimum zamówienia z odbiorem to 120 zł.</div>
       </div>
 
       <form id="orderForm">
         <div class="grid2">
-          <div><label>Imię i nazwisko</label><input id="name" required></div>
-          <div><label>Telefon</label><input id="phone" required></div>
+          <div><label data-pl="Imię i nazwisko" data-en="Full name">Imię i nazwisko</label><input id="name" required></div>
+          <div><label data-pl="Telefon" data-en="Phone">Telefon</label><input id="phone" required></div>
           <div><label>Email</label><input id="email" type="email" required></div>
           <div>
-            <label>Dzień odbioru</label>
+            <label data-pl="Dzień odbioru" data-en="Pickup day">Dzień odbioru</label>
             <select id="pickupDay">
-              <option>Poniedziałek</option>
-              <option>Środa</option>
-              <option>Piątek</option>
+              <option data-pl="Poniedziałek" data-en="Monday">Poniedziałek</option>
+              <option data-pl="Środa" data-en="Wednesday">Środa</option>
+              <option data-pl="Piątek" data-en="Friday">Piątek</option>
             </select>
           </div>
-          <div><label>Adres odbioru</label><input id="pickupAddress" required></div>
-          <div><label>Adres zwrotu</label><input id="returnAddress" required></div>
+          <div><label data-pl="Adres odbioru" data-en="Pickup address">Adres odbioru</label><input id="pickupAddress" required></div>
+          <div><label data-pl="Adres zwrotu" data-en="Return address">Adres zwrotu</label><input id="returnAddress" required></div>
         </div>
 
-        <label>Miejsce odbioru</label>
+        <label data-pl="Miejsce odbioru" data-en="Pickup place">Miejsce odbioru</label>
         <select id="pickupPlace">
-          <option>Dom</option>
-          <option>Praca</option>
-          <option>Recepcja</option>
-          <option>Sąsiad</option>
-          <option>Ustalone miejsce</option>
+          <option data-pl="Dom" data-en="Home">Dom</option>
+          <option data-pl="Praca" data-en="Work">Praca</option>
+          <option data-pl="Recepcja" data-en="Reception">Recepcja</option>
+          <option data-pl="Sąsiad" data-en="Neighbour">Sąsiad</option>
+          <option data-pl="Ustalone miejsce" data-en="Agreed place">Ustalone miejsce</option>
         </select>
 
-        <label>Uwagi do zamówienia</label>
+        <label data-pl="Uwagi do zamówienia" data-en="Order notes">Uwagi do zamówienia</label>
         <textarea id="orderNotes" placeholder="np. proszę zadzwonić 10 minut wcześniej"></textarea>
 
         <label class="checkbox">
           <input type="checkbox" id="termsCheck">
-          <span>Akceptuję <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a> oraz <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Politykę prywatności</a>.</span>
+          <span data-pl='Akceptuję <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a> oraz <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Politykę prywatności</a>.' data-en='I accept the <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Terms and Conditions</a> and <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Privacy Policy</a>.'>Akceptuję <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a> oraz <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Politykę prywatności</a>.</span>
         </label>
 
-        <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()">Przejdź do płatności online</button>
+        <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()" data-pl="Przejdź do płatności online" data-en="Proceed to online payment">Przejdź do płatności online</button>
       </form>
     </div>
   </div>
@@ -208,15 +214,15 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 
 <footer>
   <strong>FreshUp Kraków</strong><br>
-  Czyszczenie z odbiorem i zwrotem w Krakowie.<br><br>
-  Kontakt: freshup.krakow@gmail.com<br><br>
-  <a href="FreshUp_Regulamin_PL.pdf" target="_blank">Regulamin</a>
-  <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank">Polityka prywatności</a>
+  <span data-pl="Czyszczenie z odbiorem i zwrotem w Krakowie." data-en="Cleaning with pickup and return in Kraków.">Czyszczenie z odbiorem i zwrotem w Krakowie.</span><br><br>
+  Kontakt / Contact: freshup.krakow@gmail.com<br><br>
+  <a href="FreshUp_Regulamin_PL.pdf" target="_blank" data-pl="Regulamin" data-en="Terms and Conditions">Regulamin</a>
+  <a href="FreshUp_Polityka_Prywatnosci_PL.pdf" target="_blank" data-pl="Polityka prywatności" data-en="Privacy Policy">Polityka prywatności</a>
 </footer>
 
 <script>
 const PAYMENT_LINK = "PASTE_HOTPAY_LINK_HERE";
-
+let currentLang = "pl";
 let cart = [];
 
 const prices = {
@@ -229,18 +235,24 @@ const prices = {
 };
 
 const labels = {
-  shoes:"Buty",
-  handbag:"Torebka",
-  backpack:"Plecak",
-  suitcase:"Walizka",
-  travelbag:"Torba podróżna",
-  wallet:"Portfel",
-  basic:"Basic Clean",
-  deep:"Deep Clean",
-  none:"Brak",
-  protection:"Impregnacja / ochrona",
-  conditioning:"Konserwacja"
+  pl:{
+    shoes:"Buty", handbag:"Torebka", backpack:"Plecak", suitcase:"Walizka", travelbag:"Torba podróżna", wallet:"Portfel",
+    basic:"Basic Clean", deep:"Deep Clean", none:"Brak", protection:"Impregnacja / ochrona", conditioning:"Konserwacja"
+  },
+  en:{
+    shoes:"Shoes", handbag:"Handbag", backpack:"Backpack", suitcase:"Suitcase", travelbag:"Travel bag", wallet:"Wallet",
+    basic:"Basic Clean", deep:"Deep Clean", none:"None", protection:"Protection", conditioning:"Conditioning"
+  }
 };
+
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
+    el.innerHTML = el.getAttribute("data-"+lang);
+  });
+  renderCart();
+}
 
 function addItem(){
   const itemType=document.getElementById("itemType").value;
@@ -275,12 +287,12 @@ function renderCart(){
     cartDiv.innerHTML+=`
       <div class="cart-item">
         <div>
-          <strong>${labels[item.itemType]} — ${labels[item.serviceType]}</strong><br>
-          Dodatek: ${labels[item.addonType]}<br>
-          ${item.notes ? "Uwagi: " + item.notes + "<br>" : ""}
+          <strong>${labels[currentLang][item.itemType]} — ${labels[currentLang][item.serviceType]}</strong><br>
+          ${currentLang === "pl" ? "Dodatek" : "Add-on"}: ${labels[currentLang][item.addonType]}<br>
+          ${item.notes ? (currentLang === "pl" ? "Uwagi: " : "Notes: ") + item.notes + "<br>" : ""}
           <strong>${item.price} zł</strong>
         </div>
-        <button class="remove" onclick="removeItem(${index})">Usuń</button>
+        <button class="remove" onclick="removeItem(${index})">${currentLang === "pl" ? "Usuń" : "Remove"}</button>
       </div>
     `;
   });
@@ -293,12 +305,12 @@ function goToPayment(){
   const total=getTotal();
 
   if(cart.length===0){
-    alert("Dodaj przynajmniej jedną rzecz do koszyka.");
+    alert(currentLang === "pl" ? "Dodaj przynajmniej jedną rzecz do koszyka." : "Add at least one item to the cart.");
     return;
   }
 
   if(total<120){
-    alert("Minimum zamówienia z odbiorem to 120 zł.");
+    alert(currentLang === "pl" ? "Minimum zamówienia z odbiorem to 120 zł." : "Minimum order with pickup is 120 PLN.");
     return;
   }
 
@@ -306,14 +318,14 @@ function goToPayment(){
   for(const id of required){
     const field=document.getElementById(id);
     if(!field.value.trim()){
-      alert("Uzupełnij dane zamówienia.");
+      alert(currentLang === "pl" ? "Uzupełnij dane zamówienia." : "Please complete the order details.");
       field.focus();
       return;
     }
   }
 
   if(!document.getElementById("termsCheck").checked){
-    alert("Zaakceptuj regulamin i politykę prywatności.");
+    alert(currentLang === "pl" ? "Zaakceptuj regulamin i politykę prywatności." : "Please accept the Terms and Conditions and Privacy Policy.");
     return;
   }
 
@@ -333,13 +345,14 @@ function goToPayment(){
   }));
 
   if(PAYMENT_LINK === "PASTE_HOTPAY_LINK_HERE"){
-    alert("Płatność online zostanie aktywowana po podpięciu HotPay.");
+    alert(currentLang === "pl" ? "Płatność online zostanie aktywowana po podpięciu HotPay." : "Online payment will be activated after HotPay is connected.");
     return;
   }
 
   window.location.href = PAYMENT_LINK;
 }
 
+setLang("pl");
 renderCart();
 </script>
 
