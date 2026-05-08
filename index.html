@@ -6,38 +6,57 @@
 <title>FreshUp Kraków | Czyszczenie z odbiorem</title>
 <meta name="description" content="FreshUp Kraków — czyszczenie butów, torebek, walizek i plecaków z odbiorem i zwrotem pod adres.">
 <style>
-body{margin:0;font-family:Arial,sans-serif;color:#10231C;background:#fff}
-header{padding:18px 24px;border-bottom:1px solid #d7e8df;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;z-index:10}
-.logo{font-size:28px;font-weight:900;color:#19A974}
+:root{
+  --green:#19A974;--dark:#10231C;--soft:#F4FBF7;--soft2:#EAF8F1;--border:#D7E8DF;
+  --text:#10231C;--muted:#66756F;--warning:#FFF4E5;--warningText:#8A5A00;--danger:#C0392B;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff}
+header{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;z-index:10}
+.logo{font-size:28px;font-weight:900;color:var(--green)}
 .nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.lang-btn{background:white;color:#19A974;border:1px solid #19A974;padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
-.lang-btn.active{background:#19A974;color:white}
-.btn{background:#19A974;color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
-.btn.alt{background:white;color:#19A974;border:1px solid #19A974}
-.container{max-width:1100px;margin:auto;padding:58px 20px}
-.hero{background:#F4FBF7}
+.lang-btn{background:white;color:var(--green);border:1px solid var(--green);padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer}
+.lang-btn.active{background:var(--green);color:white}
+.btn{background:var(--green);color:white;padding:14px 22px;border-radius:12px;border:0;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:white;color:var(--green);border:1px solid var(--green)}
+.container{max-width:1120px;margin:auto;padding:58px 20px}
+.hero{background:linear-gradient(180deg,var(--soft),#fff)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
 h1{font-size:clamp(36px,6vw,62px);line-height:1.05;margin:0 0 18px}
 h2{font-size:34px;margin:0 0 12px}
-p{color:#66756F;font-size:18px}
+p{color:var(--muted);font-size:18px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{border:1px solid #d7e8df;border-radius:18px;padding:24px;background:white}
-.price{font-size:30px;color:#19A974;font-weight:900}
+.card{border:1px solid var(--border);border-radius:18px;padding:24px;background:white}
+.visual-card{background:white;border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:0 18px 40px rgba(16,35,28,.08)}
+.visual{height:210px;border-radius:22px;background:var(--soft2);display:flex;align-items:center;justify-content:center;font-size:74px;margin-bottom:18px}
+.icon{font-size:38px;margin-bottom:10px}
+.price{font-size:30px;color:var(--green);font-weight:900}
 label{font-weight:800;display:block;margin:14px 0 6px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #d7e8df;border-radius:10px;font-size:15px;box-sizing:border-box}
+input,select,textarea{width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;font-size:15px;box-sizing:border-box;background:white}
 textarea{min-height:80px}
-.order{border:2px solid #19A974;border-radius:22px;padding:24px}
-.cart-item{background:#F4FBF7;border:1px solid #d7e8df;border-radius:14px;padding:14px;margin:12px 0;display:flex;justify-content:space-between;gap:10px}
-.remove{border:0;background:transparent;color:#C0392B;font-weight:800;cursor:pointer}
-.summary{background:#10231C;color:white;padding:18px;border-radius:16px;margin-top:18px}
+.order{border:2px solid var(--green);border-radius:22px;padding:24px;background:white}
+.cart-item{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:14px;margin:12px 0;display:flex;justify-content:space-between;gap:10px}
+.remove{border:0;background:transparent;color:var(--danger);font-weight:800;cursor:pointer}
+.summary{background:var(--dark);color:white;padding:18px;border-radius:16px;margin-top:18px}
 .summary strong{font-size:28px}
-.warning{background:#FFF4E5;color:#8A5A00;padding:14px;border-radius:12px;margin-top:12px;font-weight:800}
-.light{background:#F4FBF7}
-footer{background:#10231C;color:white;text-align:center;padding:32px}
+.warning{background:var(--warning);color:var(--warningText);padding:14px;border-radius:12px;margin-top:12px;font-weight:800}
+.note{background:var(--soft2);color:var(--dark);padding:16px;border-radius:14px;margin-top:16px;font-weight:700}
+.light{background:var(--soft)}
+footer{background:var(--dark);color:white;text-align:center;padding:32px}
 footer a{color:white;margin:0 10px;text-decoration:underline}
-.checkbox{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;color:#10231C}
+.checkbox{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;color:var(--dark)}
 .checkbox input{width:auto;margin-top:3px}
-@media(max-width:800px){.grid,.grid2{grid-template-columns:1fr}header{flex-direction:column;gap:12px;align-items:flex-start}}
+.small{font-size:14px;color:var(--muted);margin-top:6px}
+.badge{display:inline-block;background:var(--soft2);color:var(--green);padding:8px 12px;border-radius:999px;font-weight:900;margin-bottom:14px}
+.faq details{background:white;border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
+.faq summary{font-weight:900;cursor:pointer}
+@media(max-width:850px){
+  .grid,.grid2,.hero-grid{grid-template-columns:1fr}
+  header{flex-direction:column;gap:12px;align-items:flex-start}
+  .container{padding:44px 18px}
+}
 </style>
 </head>
 
@@ -53,28 +72,40 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1 data-pl="Brudne buty, torebka albo walizka? Nie jedź do punktu." data-en="Dirty shoes, handbag or suitcase? Skip the trip to the cleaner.">Brudne buty, torebka albo walizka? Nie jedź do punktu.</h1>
-    <p data-pl="FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego." data-en="FreshUp picks up your items, cleans them and brings them back to your address. Save time and spend it on something that matters more.">FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego.</p>
-    <a href="#order" class="btn" data-pl="Zamów odbiór" data-en="Book pickup">Zamów odbiór</a>
-    <a href="#pricing" class="btn alt" data-pl="Zobacz cennik" data-en="See prices">Zobacz cennik</a>
-    <p data-pl="<strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł." data-en="<strong>Pickup days:</strong> Monday, Wednesday and Friday. <strong>Minimum order:</strong> 120 PLN."><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł.</p>
+  <div class="container hero-grid">
+    <div>
+      <div class="badge" data-pl="Kraków + okolice" data-en="Kraków + nearby areas">Kraków + okolice</div>
+      <h1 data-pl="Brudne buty, torebka albo walizka? Nie jedź do punktu." data-en="Dirty shoes, handbag or suitcase? Skip the trip to the cleaner.">Brudne buty, torebka albo walizka? Nie jedź do punktu.</h1>
+      <p data-pl="FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego." data-en="FreshUp picks up your items, cleans them and brings them back to your address. Save time and spend it on something that matters more.">FreshUp odbiera rzeczy spod wskazanego adresu, czyści je i odwozi z powrotem. Oszczędź czas i wydaj go na coś ważniejszego.</p>
+      <a href="#order" class="btn" data-pl="Zamów odbiór" data-en="Book pickup">Zamów odbiór</a>
+      <a href="#pricing" class="btn alt" data-pl="Zobacz cennik" data-en="See prices">Zobacz cennik</a>
+      <p data-pl="<strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł." data-en="<strong>Pickup days:</strong> Monday, Wednesday and Friday. <strong>Minimum order:</strong> 120 PLN."><strong>Odbiory:</strong> poniedziałek, środa, piątek. <strong>Minimum zamówienia:</strong> 120 zł.</p>
+    </div>
+
+    <div class="visual-card">
+      <div class="visual">👟👜🧳</div>
+      <h3 data-pl="Ty zamawiasz. My odbieramy, czyścimy i odwozimy." data-en="You book. We collect, clean and return.">Ty zamawiasz. My odbieramy, czyścimy i odwozimy.</h3>
+      <p data-pl="Bez jeżdżenia do punktu, bez odkładania na później." data-en="No drop-off, no extra trip, no postponing it again.">Bez jeżdżenia do punktu, bez odkładania na później.</p>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="light">
   <div class="container">
     <h2 data-pl="Jak to działa?" data-en="How it works">Jak to działa?</h2>
     <div class="grid">
       <div class="card">
+        <div class="icon">🧺</div>
         <h3 data-pl="1. Wybierasz rzeczy" data-en="1. Choose your items">1. Wybierasz rzeczy</h3>
         <p data-pl="Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel." data-en="Add each item separately: shoes, handbag, backpack, suitcase or wallet.">Dodajesz każdą rzecz osobno: buty, torebkę, plecak, walizkę albo portfel.</p>
       </div>
       <div class="card">
-        <h3 data-pl="2. Płacisz online" data-en="2. Pay online">2. Płacisz online</h3>
-        <p data-pl="Po płatności zamówienie jest aktywne i trafia do realizacji." data-en="Once paid, your order is confirmed and ready for pickup.">Po płatności zamówienie jest aktywne i trafia do realizacji.</p>
+        <div class="icon">📸</div>
+        <h3 data-pl="2. Dodajesz zdjęcia" data-en="2. Add photos">2. Dodajesz zdjęcia</h3>
+        <p data-pl="Zdjęcia są wymagane przed realizacją. Pomagają potwierdzić stan rzeczy i wcześniejsze uszkodzenia." data-en="Photos are required before service. They help confirm the item’s condition and any previous damage.">Zdjęcia są wymagane przed realizacją. Pomagają potwierdzić stan rzeczy i wcześniejsze uszkodzenia.</p>
       </div>
       <div class="card">
+        <div class="icon">🚗</div>
         <h3 data-pl="3. Odbiór i zwrot" data-en="3. Pickup and return">3. Odbiór i zwrot</h3>
         <p data-pl="Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych." data-en="We collect your items and return them within 5 business days.">Odbieramy rzeczy spod adresu i zwracamy do 5 dni roboczych.</p>
       </div>
@@ -82,34 +113,37 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
   </div>
 </section>
 
-<section id="pricing" class="light">
+<section id="pricing">
   <div class="container">
     <h2 data-pl="Cennik" data-en="Prices">Cennik</h2>
     <p data-pl="Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu." data-en="Minimum order with pickup: 120 PLN. You can combine several items in one order.">Minimalna wartość zamówienia z odbiorem: 120 zł. Możesz połączyć kilka rzeczy w jednym zamówieniu.</p>
     <div class="grid">
       <div class="card">
+        <div class="icon">👟</div>
         <h3 data-pl="Buty" data-en="Shoes">Buty</h3>
-        <div class="price">49 zł</div><p>Basic Clean</p>
-        <div class="price">79 zł</div><p>Deep Clean</p>
-        <p data-pl="Impregnacja: +19 zł" data-en="Protection: +19 PLN">Impregnacja: +19 zł</p>
+        <div class="price">29 zł</div><p>Basic Clean</p>
+        <div class="price">59 zł</div><p>Deep Clean</p>
+        <p data-pl="Impregnacja: +15 zł" data-en="Protection: +15 PLN">Impregnacja: +15 zł</p>
       </div>
       <div class="card">
+        <div class="icon">👜</div>
         <h3 data-pl="Torebki / plecaki" data-en="Handbags / backpacks">Torebki / plecaki</h3>
-        <div class="price">69 zł</div><p>Basic Clean</p>
-        <div class="price">99 zł</div><p>Deep Clean</p>
-        <p data-pl="Konserwacja: +29 zł" data-en="Conditioning: +29 PLN">Konserwacja: +29 zł</p>
+        <div class="price">39 zł</div><p>Basic Clean</p>
+        <div class="price">89 zł</div><p>Deep Clean</p>
+        <p data-pl="Konserwacja: +25 zł" data-en="Conditioning: +25 PLN">Konserwacja: +25 zł</p>
       </div>
       <div class="card">
+        <div class="icon">🧳</div>
         <h3 data-pl="Walizki / torby" data-en="Suitcases / travel bags">Walizki / torby</h3>
-        <div class="price">89 zł</div><p>Basic Clean</p>
-        <div class="price">129 zł</div><p>Deep Clean</p>
+        <div class="price">59 zł</div><p>Basic Clean</p>
+        <div class="price">119 zł</div><p>Deep Clean</p>
         <p data-pl="Większe zabrudzenia potwierdzamy przed realizacją." data-en="Heavier dirt is confirmed before cleaning.">Większe zabrudzenia potwierdzamy przed realizacją.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="light">
   <div class="container grid2">
     <div class="card">
       <h2>Basic Clean</h2>
@@ -118,6 +152,24 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
     <div class="card">
       <h2>Deep Clean</h2>
       <p data-pl="Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone." data-en="For heavier dirt: mud, dirty interiors, coffee or wine stains, intensive use and items that have not been cleaned for a long time.">Mocniejsze zabrudzenia: błoto, brudne wnętrze, plamy po kawie/winie, intensywne użytkowanie, rzeczy długo nieczyszczone.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-pl="Czyść zamiast wyrzucać" data-en="Clean instead of replacing">Czyść zamiast wyrzucać</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="icon">♻️</div>
+        <h3 data-pl="Używaj dłużej tego, co już masz" data-en="Use what you already have for longer">Używaj dłużej tego, co już masz</h3>
+        <p data-pl="Odświeżenie butów, torebek, plecaków czy walizek pomaga korzystać z nich dłużej, zamiast od razu kupować nowe." data-en="Refreshing shoes, handbags, backpacks and suitcases helps you use them for longer instead of replacing them too quickly.">Odświeżenie butów, torebek, plecaków czy walizek pomaga korzystać z nich dłużej, zamiast od razu kupować nowe.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏠</div>
+        <h3 data-pl="Mniej odkładania, więcej porządku" data-en="Less postponing, more order">Mniej odkładania, więcej porządku</h3>
+        <p data-pl="Rzeczy, które czekają na wyczyszczenie, nie muszą leżeć miesiącami w kącie. Możesz oddać je do odświeżenia bez jeżdżenia do punktu." data-en="Items waiting to be cleaned do not have to sit in a corner for months. You can have them refreshed without going to a drop-off point.">Rzeczy, które czekają na wyczyszczenie, nie muszą leżeć miesiącami w kącie. Możesz oddać je do odświeżenia bez jeżdżenia do punktu.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -135,7 +187,35 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
         <p data-pl="Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki." data-en="Suede, nubuck, very expensive luxury items, renovations, shoe repairs and extreme rescue cases.">Zamsz, nubuk, bardzo drogie rzeczy luksusowe, renowacje, naprawy szewskie, ekstremalne przypadki.</p>
       </div>
     </div>
+
     <div class="warning" data-pl="Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia." data-en="If the item clearly requires a different service than the one selected, we will contact you before cleaning to discuss an extra payment or cancellation.">Jeśli stan rzeczy będzie wyraźnie odbiegał od wybranej usługi, skontaktujemy się przed realizacją w sprawie dopłaty albo anulowania zamówienia.</div>
+
+    <div class="note" data-pl="<strong>Drobne poprawki?</strong> Nie wykonujemy napraw szewskich ani renowacji, ale w przypadku prostych, niewielkich poprawek możemy ocenić możliwość wykonania po zdjęciach. Opisz problem w uwagach do zamówienia." data-en="<strong>Small fixes?</strong> We do not provide shoe repairs or renovations, but for simple minor fixes we can assess the possibility after seeing photos. Please describe the issue in the order notes."><strong>Drobne poprawki?</strong> Nie wykonujemy napraw szewskich ani renowacji, ale w przypadku prostych, niewielkich poprawek możemy ocenić możliwość wykonania po zdjęciach. Opisz problem w uwagach do zamówienia.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-pl="Zdjęcia przed odbiorem" data-en="Photos before pickup">Zdjęcia przed odbiorem</h2>
+    <p data-pl="Przed realizacją zamówienia prosimy o dodanie zdjęć przedmiotów. To pomaga potwierdzić stan rzeczy przed odbiorem, wcześniejsze uszkodzenia oraz identyfikację zamówienia." data-en="Before service, please add photos of your items. This helps confirm the condition before pickup, previous damage and order identification.">Przed realizacją zamówienia prosimy o dodanie zdjęć przedmiotów. To pomaga potwierdzić stan rzeczy przed odbiorem, wcześniejsze uszkodzenia oraz identyfikację zamówienia.</p>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <h2 data-pl="Wkrótce" data-en="Coming soon">Wkrótce</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="icon">🐾</div>
+        <h3>FreshUp Pets</h3>
+        <p data-pl="Czyszczenie legowisk, kocyków, transporterów i akcesoriów dla pupili." data-en="Cleaning for pet beds, blankets, carriers and pet accessories.">Czyszczenie legowisk, kocyków, transporterów i akcesoriów dla pupili.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧸</div>
+        <h3>FreshUp Kids</h3>
+        <p data-pl="Czyszczenie wózków, fotelików i wybranych akcesoriów dziecięcych." data-en="Cleaning for strollers, car seats and selected children’s accessories.">Czyszczenie wózków, fotelików i wybranych akcesoriów dziecięcych.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -170,19 +250,18 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
           <label data-pl="Dodatek" data-en="Add-on">Dodatek</label>
           <select id="addonType">
             <option value="none" data-pl="Brak" data-en="None">Brak</option>
-            <option value="protection" data-pl="Impregnacja / ochrona +19 zł" data-en="Protection +19 PLN">Impregnacja / ochrona +19 zł</option>
-            <option value="conditioning" data-pl="Konserwacja +29 zł" data-en="Conditioning +29 PLN">Konserwacja +29 zł</option>
+            <option value="protection" data-pl="Impregnacja / ochrona +15 zł" data-en="Protection +15 PLN">Impregnacja / ochrona +15 zł</option>
+            <option value="conditioning" data-pl="Konserwacja +25 zł" data-en="Conditioning +25 PLN">Konserwacja +25 zł</option>
           </select>
         </div>
 
         <div>
           <label data-pl="Uwagi do rzeczy" data-en="Item notes">Uwagi do rzeczy</label>
-          <input id="itemNotes" data-pl-placeholder="np. plama, brudne wnętrze" data-en-placeholder="e.g. stain, dirty interior" placeholder="np. plama, brudne wnętrze">
+          <input id="itemNotes" data-pl-placeholder="np. plama, brudne wnętrze, drobna poprawka do oceny" data-en-placeholder="e.g. stain, dirty interior, small fix to assess" placeholder="np. plama, brudne wnętrze, drobna poprawka do oceny">
         </div>
       </div>
 
       <button class="btn" style="margin-top:18px" onclick="addItem()" data-pl="Dodaj do koszyka" data-en="Add to cart">Dodaj do koszyka</button>
-
       <div id="cart"></div>
 
       <div class="summary">
@@ -191,34 +270,29 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
         <div id="minWarning" class="warning" data-pl="Minimum zamówienia z odbiorem to 120 zł." data-en="Minimum order with pickup is 120 PLN.">Minimum zamówienia z odbiorem to 120 zł.</div>
       </div>
 
-      <form id="orderForm">
+      <form name="freshup-order" method="POST" data-netlify="true" enctype="multipart/form-data" id="orderForm">
+        <input type="hidden" name="form-name" value="freshup-order">
+        <input type="hidden" name="cart" id="cartInput">
+        <input type="hidden" name="total" id="totalInput">
+
         <div class="grid2">
-          <div><label data-pl="Imię i nazwisko" data-en="Full name">Imię i nazwisko</label><input id="name" required></div>
-          <div><label data-pl="Telefon" data-en="Phone number">Telefon</label><input id="phone" required></div>
-          <div><label>Email</label><input id="email" type="email" required></div>
-          <div>
-            <label data-pl="Dzień odbioru" data-en="Pickup day">Dzień odbioru</label>
-            <select id="pickupDay">
-              <option data-pl="Poniedziałek" data-en="Monday">Poniedziałek</option>
-              <option data-pl="Środa" data-en="Wednesday">Środa</option>
-              <option data-pl="Piątek" data-en="Friday">Piątek</option>
-            </select>
-          </div>
-          <div><label data-pl="Adres odbioru" data-en="Pickup address">Adres odbioru</label><input id="pickupAddress" required></div>
-          <div><label data-pl="Adres zwrotu" data-en="Return address">Adres zwrotu</label><input id="returnAddress" required></div>
+          <div><label data-pl="Imię i nazwisko" data-en="Full name">Imię i nazwisko</label><input name="name" id="name" required></div>
+          <div><label data-pl="Telefon" data-en="Phone number">Telefon</label><input name="phone" id="phone" required></div>
+          <div><label>Email</label><input name="email" id="email" type="email" required></div>
+          <div><label data-pl="Dzień odbioru" data-en="Pickup day">Dzień odbioru</label><select name="pickup_day" id="pickupDay"><option data-pl="Poniedziałek" data-en="Monday">Poniedziałek</option><option data-pl="Środa" data-en="Wednesday">Środa</option><option data-pl="Piątek" data-en="Friday">Piątek</option></select></div>
+          <div><label data-pl="Adres odbioru" data-en="Pickup address">Adres odbioru</label><input name="pickup_address" id="pickupAddress" required></div>
+          <div><label data-pl="Adres zwrotu" data-en="Return address">Adres zwrotu</label><input name="return_address" id="returnAddress" required></div>
         </div>
 
         <label data-pl="Miejsce odbioru" data-en="Pickup place">Miejsce odbioru</label>
-        <select id="pickupPlace">
-          <option data-pl="Dom" data-en="Home">Dom</option>
-          <option data-pl="Praca" data-en="Work">Praca</option>
-          <option data-pl="Recepcja" data-en="Reception">Recepcja</option>
-          <option data-pl="Sąsiad" data-en="Neighbour">Sąsiad</option>
-          <option data-pl="Ustalone miejsce" data-en="Agreed place">Ustalone miejsce</option>
-        </select>
+        <select name="pickup_place" id="pickupPlace"><option data-pl="Dom" data-en="Home">Dom</option><option data-pl="Praca" data-en="Work">Praca</option><option data-pl="Recepcja" data-en="Reception">Recepcja</option><option data-pl="Sąsiad" data-en="Neighbour">Sąsiad</option><option data-pl="Ustalone miejsce" data-en="Agreed place">Ustalone miejsce</option></select>
+
+        <label data-pl="Zdjęcia przedmiotów przed odbiorem" data-en="Photos of items before pickup">Zdjęcia przedmiotów przed odbiorem</label>
+        <input type="file" name="photos" id="itemPhotos" accept="image/*" multiple required>
+        <p class="small" data-pl="Dodaj minimum 1 zdjęcie każdej rzeczy. Zdjęcia są wymagane do realizacji zamówienia." data-en="Add at least 1 photo of each item. Photos are required to process the order.">Dodaj minimum 1 zdjęcie każdej rzeczy. Zdjęcia są wymagane do realizacji zamówienia.</p>
 
         <label data-pl="Uwagi do zamówienia" data-en="Order notes">Uwagi do zamówienia</label>
-        <textarea id="orderNotes" data-pl-placeholder="np. proszę zadzwonić 10 minut wcześniej" data-en-placeholder="e.g. please call 10 minutes before pickup" placeholder="np. proszę zadzwonić 10 minut wcześniej"></textarea>
+        <textarea name="order_notes" id="orderNotes" data-pl-placeholder="np. proszę zadzwonić 10 minut wcześniej" data-en-placeholder="e.g. please call 10 minutes before pickup" placeholder="np. proszę zadzwonić 10 minut wcześniej"></textarea>
 
         <label class="checkbox">
           <input type="checkbox" id="termsCheck">
@@ -228,6 +302,32 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
         <button type="button" class="btn" style="margin-top:20px" onclick="goToPayment()" data-pl="Przejdź do płatności online" data-en="Proceed to online payment">Przejdź do płatności online</button>
       </form>
     </div>
+  </div>
+</section>
+
+<section class="faq light">
+  <div class="container">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary data-pl="Czy muszę dodać zdjęcia?" data-en="Do I need to add photos?">Czy muszę dodać zdjęcia?</summary>
+      <p data-pl="Tak. Zdjęcia są wymagane przed realizacją zamówienia. Pomagają potwierdzić stan rzeczy przed odbiorem i wcześniejsze uszkodzenia." data-en="Yes. Photos are required before service. They help confirm the condition before pickup and any previous damage.">Tak. Zdjęcia są wymagane przed realizacją zamówienia. Pomagają potwierdzić stan rzeczy przed odbiorem i wcześniejsze uszkodzenia.</p>
+    </details>
+
+    <details>
+      <summary data-pl="Kiedy odbieracie zamówienia?" data-en="When do you collect orders?">Kiedy odbieracie zamówienia?</summary>
+      <p data-pl="Odbiory są w poniedziałki, środy i piątki. Po zamówieniu otrzymasz informację o przedziale godzinowym odbioru." data-en="Pickups are on Mondays, Wednesdays and Fridays. After booking, you will receive information about the pickup time window.">Odbiory są w poniedziałki, środy i piątki. Po zamówieniu otrzymasz informację o przedziale godzinowym odbioru.</p>
+    </details>
+
+    <details>
+      <summary data-pl="Czy czyścicie zamsz i nubuk?" data-en="Do you clean suede and nubuck?">Czy czyścicie zamsz i nubuk?</summary>
+      <p data-pl="Na start nie przyjmujemy zamszu ani nubuku." data-en="Not at launch. We do not accept suede or nubuck for now.">Na start nie przyjmujemy zamszu ani nubuku.</p>
+    </details>
+
+    <details>
+      <summary data-pl="Czy wykonujecie naprawy?" data-en="Do you do repairs?">Czy wykonujecie naprawy?</summary>
+      <p data-pl="Nie wykonujemy napraw szewskich ani renowacji. Przy prostych, niewielkich poprawkach możemy ocenić możliwość wykonania po zdjęciach." data-en="We do not provide shoe repairs or renovations. For simple minor fixes, we can assess the possibility after seeing photos.">Nie wykonujemy napraw szewskich ani renowacji. Przy prostych, niewielkich poprawkach możemy ocenić możliwość wykonania po zdjęciach.</p>
+    </details>
   </div>
 </section>
 
@@ -241,27 +341,44 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 
 <script>
 const PAYMENT_LINK = "PASTE_HOTPAY_LINK_HERE";
-
 let currentLang = "pl";
 let cart = [];
 
 const prices = {
-  shoes:{basic:49,deep:79},
-  handbag:{basic:69,deep:99},
-  backpack:{basic:69,deep:99},
-  suitcase:{basic:89,deep:129},
-  travelbag:{basic:89,deep:129},
-  wallet:{basic:39,deep:59}
+  shoes:{basic:29,deep:59},
+  handbag:{basic:39,deep:89},
+  backpack:{basic:39,deep:89},
+  suitcase:{basic:59,deep:119},
+  travelbag:{basic:59,deep:119},
+  wallet:{basic:29,deep:49}
 };
 
 const labels = {
   pl:{
-    shoes:"Buty",handbag:"Torebka",backpack:"Plecak",suitcase:"Walizka",travelbag:"Torba podróżna",wallet:"Portfel",
-    basic:"Basic Clean",deep:"Deep Clean",none:"Brak",protection:"Impregnacja / ochrona",conditioning:"Konserwacja"
+    shoes:"Buty",
+    handbag:"Torebka",
+    backpack:"Plecak",
+    suitcase:"Walizka",
+    travelbag:"Torba podróżna",
+    wallet:"Portfel",
+    basic:"Basic Clean",
+    deep:"Deep Clean",
+    none:"Brak",
+    protection:"Impregnacja / ochrona",
+    conditioning:"Konserwacja"
   },
   en:{
-    shoes:"Shoes",handbag:"Handbag",backpack:"Backpack",suitcase:"Suitcase",travelbag:"Travel bag",wallet:"Wallet",
-    basic:"Basic Clean",deep:"Deep Clean",none:"None",protection:"Protection",conditioning:"Conditioning"
+    shoes:"Shoes",
+    handbag:"Handbag",
+    backpack:"Backpack",
+    suitcase:"Suitcase",
+    travelbag:"Travel bag",
+    wallet:"Wallet",
+    basic:"Basic Clean",
+    deep:"Deep Clean",
+    none:"None",
+    protection:"Protection",
+    conditioning:"Conditioning"
   }
 };
 
@@ -279,7 +396,6 @@ function setLang(lang){
 
   document.getElementById("plBtn").classList.toggle("active", lang === "pl");
   document.getElementById("enBtn").classList.toggle("active", lang === "en");
-
   renderCart();
 }
 
@@ -290,8 +406,9 @@ function addItem(){
   const notes=document.getElementById("itemNotes").value;
 
   let price=prices[itemType][serviceType];
-  if(addonType==="protection") price+=19;
-  if(addonType==="conditioning") price+=29;
+
+  if(addonType==="protection") price+=15;
+  if(addonType==="conditioning") price+=25;
 
   cart.push({itemType,serviceType,addonType,notes,price});
   document.getElementById("itemNotes").value="";
@@ -322,15 +439,16 @@ function renderCart(){
           <strong>${item.price} zł</strong>
         </div>
         <button class="remove" onclick="removeItem(${index})">${currentLang==="pl" ? "Usuń" : "Remove"}</button>
-      </div>
-    `;
+      </div>`;
   });
 
   document.getElementById("total").textContent=total;
+  document.getElementById("cartInput").value=JSON.stringify(cart);
+  document.getElementById("totalInput").value=total;
   document.getElementById("minWarning").style.display=total>=120?"none":"block";
 }
 
-function goToPayment(){
+async function goToPayment(){
   const total=getTotal();
 
   if(cart.length===0){
@@ -353,13 +471,31 @@ function goToPayment(){
     }
   }
 
+  if(document.getElementById("itemPhotos").files.length===0){
+    alert(currentLang==="pl" ? "Dodaj zdjęcia przedmiotów przed odbiorem." : "Please add photos of the items before pickup.");
+    return;
+  }
+
   if(!document.getElementById("termsCheck").checked){
     alert(currentLang==="pl" ? "Zaakceptuj regulamin i politykę prywatności." : "Please accept the Terms and Conditions and Privacy Policy.");
     return;
   }
 
+  document.getElementById("cartInput").value=JSON.stringify(cart);
+  document.getElementById("totalInput").value=total;
+
+  const form=document.getElementById("orderForm");
+  const formData=new FormData(form);
+
+  try{
+    await fetch("/",{method:"POST",body:formData});
+  }catch(e){
+    alert(currentLang==="pl" ? "Nie udało się zapisać zamówienia. Spróbuj ponownie." : "Could not save the order. Please try again.");
+    return;
+  }
+
   if(PAYMENT_LINK === "PASTE_HOTPAY_LINK_HERE"){
-    alert(currentLang==="pl" ? "Płatność online zostanie aktywowana po podpięciu HotPay." : "Online payment will be activated after HotPay is connected.");
+    alert(currentLang==="pl" ? "Zamówienie zapisane. Płatność online zostanie aktywowana po podpięciu HotPay." : "Order saved. Online payment will be activated after HotPay is connected.");
     return;
   }
 
