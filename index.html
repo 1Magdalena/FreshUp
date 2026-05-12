@@ -52,6 +52,25 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 .badge{display:inline-block;background:var(--soft2);color:var(--green);padding:8px 12px;border-radius:999px;font-weight:900;margin-bottom:14px}
 .faq details{background:white;border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
 .faq summary{font-weight:900;cursor:pointer}
+  #cart{
+  margin-top:20px;
+  scroll-margin-top:120px;
+}
+
+.cart-item{
+  animation:fadeIn .25s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 @media(max-width:850px){
   .grid,.grid2,.hero-grid{grid-template-columns:1fr}
   header{flex-direction:column;gap:12px;align-items:flex-start}
@@ -340,7 +359,7 @@ footer a{color:white;margin:0 10px;text-decoration:underline}
 </footer>
 
 <script>
-const PAYMENT_LINK = "PASTE_HOTPAY_LINK_HERE";
+const PAYMENT_LINK = "enVmOGdnWnB5MEk2SlhqQkJPQkJEaTlxbnplYzZQNUJKUnVBSzhySWsyaz0,";
 let currentLang = "pl";
 let cart = [];
 
@@ -451,7 +470,7 @@ function renderCart(){
 async function goToPayment(){
 <script>
 const HOTPAY_URL = "https://platnosc.hotpay.pl/";
-const HOTPAY_SECRET = "SkpNcnErUHNpbWZEUUp0TmhqbnJ2Y2lFSlJBckJkMjlOekxxUldjdDYzRT0,";
+const HOTPAY_SECRET = "TU_WKLEJ_TUTAJ_SEKRET_FRESHUP_Z_HOTPAY";
 
 let currentLang = "pl";
 let cart = [];
@@ -467,12 +486,30 @@ const prices = {
 
 const labels = {
   pl:{
-    shoes:"Buty", handbag:"Torebka", backpack:"Plecak", suitcase:"Walizka", travelbag:"Torba podróżna", wallet:"Portfel",
-    basic:"Basic Clean", deep:"Deep Clean", none:"Brak", protection:"Impregnacja / ochrona", conditioning:"Konserwacja"
+    shoes:"Buty",
+    handbag:"Torebka",
+    backpack:"Plecak",
+    suitcase:"Walizka",
+    travelbag:"Torba podróżna",
+    wallet:"Portfel",
+    basic:"Basic Clean",
+    deep:"Deep Clean",
+    none:"Brak",
+    protection:"Impregnacja / ochrona",
+    conditioning:"Konserwacja"
   },
   en:{
-    shoes:"Shoes", handbag:"Handbag", backpack:"Backpack", suitcase:"Suitcase", travelbag:"Travel bag", wallet:"Wallet",
-    basic:"Basic Clean", deep:"Deep Clean", none:"None", protection:"Protection", conditioning:"Conditioning"
+    shoes:"Shoes",
+    handbag:"Handbag",
+    backpack:"Backpack",
+    suitcase:"Suitcase",
+    travelbag:"Travel bag",
+    wallet:"Wallet",
+    basic:"Basic Clean",
+    deep:"Deep Clean",
+    none:"None",
+    protection:"Protection",
+    conditioning:"Conditioning"
   }
 };
 
@@ -490,10 +527,12 @@ function setLang(lang){
 
   document.getElementById("plBtn").classList.toggle("active", lang === "pl");
   document.getElementById("enBtn").classList.toggle("active", lang === "en");
+
   renderCart();
 }
 
 function addItem(){
+
   const itemType = document.getElementById("itemType").value;
   const serviceType = document.getElementById("serviceType").value;
   const addonType = document.getElementById("addonType").value;
@@ -504,9 +543,22 @@ function addItem(){
   if(addonType === "protection") price += 15;
   if(addonType === "conditioning") price += 25;
 
-  cart.push({itemType,serviceType,addonType,notes,price});
+  cart.push({
+    itemType,
+    serviceType,
+    addonType,
+    notes,
+    price
+  });
+
   document.getElementById("itemNotes").value = "";
+
   renderCart();
+
+  document.getElementById("cart").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
 
 function removeItem(index){
@@ -519,110 +571,241 @@ function getTotal(){
 }
 
 function renderCart(){
+
   const cartDiv = document.getElementById("cart");
   const total = getTotal();
+
   cartDiv.innerHTML = "";
 
   cart.forEach((item,index)=>{
+
     cartDiv.innerHTML += `
       <div class="cart-item">
         <div>
-          <strong>${labels[currentLang][item.itemType]} — ${labels[currentLang][item.serviceType]}</strong><br>
-          ${currentLang==="pl" ? "Dodatek" : "Add-on"}: ${labels[currentLang][item.addonType]}<br>
-          ${item.notes ? (currentLang==="pl" ? "Uwagi: " : "Notes: ") + item.notes + "<br>" : ""}
+          <strong>
+            ${labels[currentLang][item.itemType]}
+            —
+            ${labels[currentLang][item.serviceType]}
+          </strong>
+          <br>
+
+          ${currentLang==="pl" ? "Dodatek" : "Add-on"}:
+          ${labels[currentLang][item.addonType]}
+          <br>
+
+          ${
+            item.notes
+            ?
+            (
+              currentLang==="pl"
+              ? "Uwagi: "
+              : "Notes: "
+            ) + item.notes + "<br>"
+            : ""
+          }
+
           <strong>${item.price} zł</strong>
         </div>
-        <button class="remove" onclick="removeItem(${index})">${currentLang==="pl" ? "Usuń" : "Remove"}</button>
-      </div>`;
+
+        <button class="remove" onclick="removeItem(${index})">
+          ${currentLang==="pl" ? "Usuń" : "Remove"}
+        </button>
+      </div>
+    `;
   });
 
   document.getElementById("total").textContent = total;
-  document.getElementById("cartInput").value = JSON.stringify(cart);
+
+  document.getElementById("cartInput").value =
+    JSON.stringify(cart);
+
   document.getElementById("totalInput").value = total;
-  document.getElementById("minWarning").style.display = total >= 120 ? "none" : "block";
+
+  document.getElementById("minWarning").style.display =
+    total >= 120 ? "none" : "block";
 }
 
-function addHotpayField(formElement, name, value){
+function addHotpayField(formElement,name,value){
+
   const input = document.createElement("input");
+
   input.type = "hidden";
   input.name = name;
   input.value = value;
+
   formElement.appendChild(input);
 }
 
 async function goToPayment(){
+
   const total = getTotal();
 
   if(cart.length === 0){
-    alert(currentLang==="pl" ? "Dodaj przynajmniej jedną rzecz do koszyka." : "Add at least one item to the cart.");
+
+    alert(
+      currentLang==="pl"
+      ? "Dodaj przynajmniej jedną rzecz do koszyka."
+      : "Add at least one item to the cart."
+    );
+
     return;
   }
 
   if(total < 120){
-    alert(currentLang==="pl" ? "Minimum zamówienia z odbiorem to 120 zł." : "Minimum order with pickup is 120 PLN.");
+
+    alert(
+      currentLang==="pl"
+      ? "Minimum zamówienia z odbiorem to 120 zł."
+      : "Minimum order with pickup is 120 PLN."
+    );
+
     return;
   }
 
-  const required = ["name","phone","email","pickupAddress","returnAddress"];
+  const required = [
+    "name",
+    "phone",
+    "email",
+    "pickupAddress",
+    "returnAddress"
+  ];
+
   for(const id of required){
+
     const field = document.getElementById(id);
+
     if(!field.value.trim()){
-      alert(currentLang==="pl" ? "Uzupełnij dane zamówienia." : "Please complete the order details.");
+
+      alert(
+        currentLang==="pl"
+        ? "Uzupełnij dane zamówienia."
+        : "Please complete the order details."
+      );
+
       field.focus();
+
       return;
     }
   }
 
-  if(document.getElementById("itemPhotos").files.length === 0){
-    alert(currentLang==="pl" ? "Dodaj zdjęcia przedmiotów przed odbiorem." : "Please add photos of the items before pickup.");
+  if(
+    document.getElementById("itemPhotos").files.length === 0
+  ){
+
+    alert(
+      currentLang==="pl"
+      ? "Dodaj zdjęcia przedmiotów przed odbiorem."
+      : "Please add photos of the items before pickup."
+    );
+
     return;
   }
 
-  if(!document.getElementById("termsCheck").checked){
-    alert(currentLang==="pl" ? "Zaakceptuj regulamin i politykę prywatności." : "Please accept the Terms and Conditions and Privacy Policy.");
+  if(
+    !document.getElementById("termsCheck").checked
+  ){
+
+    alert(
+      currentLang==="pl"
+      ? "Zaakceptuj regulamin i politykę prywatności."
+      : "Please accept the Terms and Conditions and Privacy Policy."
+    );
+
     return;
   }
 
   const orderId = "FU-" + Date.now();
 
-  document.getElementById("cartInput").value = JSON.stringify(cart);
-  document.getElementById("totalInput").value = total;
+  document.getElementById("cartInput").value =
+    JSON.stringify(cart);
+
+  document.getElementById("totalInput").value =
+    total;
 
   const form = document.getElementById("orderForm");
+
   const formData = new FormData(form);
 
   formData.append("order_id", orderId);
-  formData.append("kwota_do_zaplaty", total + " zł");
+
+  formData.append(
+    "kwota_do_zaplaty",
+    total + " zł"
+  );
 
   try{
-    await fetch("/", {
-      method: "POST",
-      body: formData
+
+    await fetch("/",{
+      method:"POST",
+      body:formData
     });
+
   }catch(e){
-    alert(currentLang==="pl" ? "Nie udało się zapisać zamówienia. Spróbuj ponownie." : "Could not save the order. Please try again.");
+
+    alert(
+      currentLang==="pl"
+      ? "Nie udało się zapisać zamówienia. Spróbuj ponownie."
+      : "Could not save the order. Please try again."
+    );
+
     return;
   }
 
   const hotpayForm = document.createElement("form");
+
   hotpayForm.method = "POST";
+
   hotpayForm.action = HOTPAY_URL;
 
-  addHotpayField(hotpayForm, "SEKRET", HOTPAY_SECRET);
-  addHotpayField(hotpayForm, "KWOTA", total);
-  addHotpayField(hotpayForm, "NAZWA_USLUGI", "FreshUp Kraków - zamówienie " + orderId);
-  addHotpayField(hotpayForm, "ADRES_WWW", "https://freshupkrakow.pl/");
-  addHotpayField(hotpayForm, "ID_ZAMOWIENIA", orderId);
-  addHotpayField(hotpayForm, "EMAIL", document.getElementById("email").value);
+  addHotpayField(
+    hotpayForm,
+    "SEKRET",
+    HOTPAY_SECRET
+  );
+
+  addHotpayField(
+    hotpayForm,
+    "KWOTA",
+    total
+  );
+
+  addHotpayField(
+    hotpayForm,
+    "NAZWA_USLUGI",
+    "FreshUp Kraków - zamówienie " + orderId
+  );
+
+  addHotpayField(
+    hotpayForm,
+    "ADRES_WWW",
+    "https://freshupkrakow.pl/"
+  );
+
+  addHotpayField(
+    hotpayForm,
+    "ID_ZAMOWIENIA",
+    orderId
+  );
+
+  addHotpayField(
+    hotpayForm,
+    "EMAIL",
+    document.getElementById("email").value
+  );
 
   const customerData =
     document.getElementById("name").value +
     " | tel: " +
     document.getElementById("phone").value;
 
-  addHotpayField(hotpayForm, "DANE_OSOBOWE", customerData);
+  addHotpayField(
+    hotpayForm,
+    "DANE_OSOBOWE",
+    customerData
+  );
 
   document.body.appendChild(hotpayForm);
+
   hotpayForm.submit();
 }
 
